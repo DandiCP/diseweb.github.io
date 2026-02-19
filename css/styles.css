@@ -1,0 +1,47 @@
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+}
+
+.topbar{
+  background:#111;
+  color:white;
+  padding:10px;
+}
+
+.editor{
+  display:flex;
+  height:calc(100vh - 50px);
+}
+
+.sidebar{
+  width:200px;
+  background:#f4f4f4;
+  padding:10px;
+}
+
+.component{
+  background:white;
+  padding:8px;
+  margin-bottom:8px;
+  cursor:grab;
+  border:1px solid #ddd;
+}
+
+#canvas{
+  flex:1;
+  background:#fafafa;
+  padding:20px;
+  overflow:auto;
+}
+
+.properties{
+  width:220px;
+  background:#f4f4f4;
+  padding:10px;
+}
+
+.selected{
+  outline:2px solid blue;
+}
+
