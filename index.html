@@ -1,68 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web Builder</title>
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Constructor visual de sitios web con drag and drop">
+  <title>Web Builder - Constructor Visual</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<header class="topbar">
-  <button id="saveBtn">Guardar</button>
-  <button id="previewBtn">Vista previa</button>
-  <button id="exportBtn">Exportar ZIP</button>
-  <button id="deleteBtn">Eliminar elemento</button>
+<header class="topbar" role="banner">
+  <h1>Web Builder</h1>
+  <nav class="toolbar">
+    <button id="saveBtn" title="Guardar proyecto (Ctrl+S)">💾 Guardar</button>
+    <button id="previewBtn" title="Ver vista previa">👁️ Vista previa</button>
+    <button id="exportBtn" title="Descargar como ZIP">📦 Exportar ZIP</button>
+    <button id="deleteBtn" title="Eliminar elemento seleccionado">🗑️ Eliminar</button>
+  </nav>
 </header>
 
 <div class="editor">
 
-  <aside class="sidebar">
-    <div class="component" draggable="true" data-type="section">Sección</div>
-    <div class="component" draggable="true" data-type="container">Contenedor</div>
-    <div class="component" draggable="true" data-type="h1">Título</div>
-    <div class="component" draggable="true" data-type="p">Párrafo</div>
-    <div class="component" draggable="true" data-type="button">Botón</div>
-    <div class="component" draggable="true" data-type="image">Imagen</div>
-    <div class="component" draggable="true" data-type="video">Video</div>
-    <div class="component" draggable="true" data-type="file">Archivo</div>
+  <aside class="sidebar" role="complementary" aria-label="Componentes disponibles">
+    <h2>Componentes</h2>
+    <div class="components-grid">
+      <div class="component" draggable="true" data-type="section" title="Agregar sección">📋 Sección</div>
+      <div class="component" draggable="true" data-type="container" title="Agregar contenedor">📦 Contenedor</div>
+      <div class="component" draggable="true" data-type="h1" title="Agregar título">📝 Título</div>
+      <div class="component" draggable="true" data-type="p" title="Agregar párrafo">✍️ Párrafo</div>
+      <div class="component" draggable="true" data-type="button" title="Agregar botón">🔘 Botón</div>
+      <div class="component" draggable="true" data-type="image" title="Agregar imagen">🖼️ Imagen</div>
+      <div class="component" draggable="true" data-type="video" title="Agregar video">🎬 Video</div>
+      <div class="component" draggable="true" data-type="file" title="Agregar archivo">📄 Archivo</div>
+    </div>
   </aside>
 
-  <main id="canvas"></main>
+  <main id="canvas" class="canvas" role="main" aria-label="Área de diseño"></main>
 
-  <aside class="properties">
-    <h3>Propiedades</h3>
+  <aside class="properties" role="complementary" aria-label="Editor de propiedades">
+    <h2>Propiedades</h2>
+    
+    <fieldset>
+      <legend>Contenido</legend>
+      <label for="propText">Texto</label>
+      <input type="text" id="propText" placeholder="Ingrese el texto">
+    </fieldset>
 
-    <label>Texto</label>
-    <input type="text" id="propText">
-
-    <div id="buttonOptions" style="display:none">
-      <label>Color fondo</label>
+    <fieldset id="buttonOptions" style="display:none">
+      <legend>Opciones de Botón</legend>
+      
+      <label for="btnBgColor">Color fondo</label>
       <input type="color" id="btnBgColor">
 
-      <label>Color texto</label>
+      <label for="btnTextColor">Color texto</label>
       <input type="color" id="btnTextColor">
 
-      <label>Enlace (URL)</label>
-      <input type="text" id="btnLink">
+      <label for="btnLink">Enlace (URL)</label>
+      <input type="url" id="btnLink" placeholder="https://ejemplo.com">
 
       <label>
         <input type="checkbox" id="btnNewTab">
         Abrir en nueva pestaña
       </label>
 
-      <label>Tipo</label>
+      <label for="btnType">Tipo</label>
       <select id="btnType">
         <option value="button">Normal</option>
         <option value="submit">Submit</option>
       </select>
 
-      <label>Acción alerta</label>
-      <input type="text" id="btnAlert">
-    </div>
+      <label for="btnAlert">Acción alerta</label>
+      <input type="text" id="btnAlert" placeholder="Mensaje al hacer clic">
+    </fieldset>
 
-    <label>Subir archivo</label>
-    <input type="file" id="fileInput">
+    <fieldset>
+      <legend>Archivos</legend>
+      <label for="fileInput">Subir archivo</label>
+      <input type="file" id="fileInput">
+    </fieldset>
 
   </aside>
 
