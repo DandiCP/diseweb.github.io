@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Builder</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button id="saveBtn">Guardar</button>
+  <button id="previewBtn">Vista previa</button>
+  <button id="exportBtn">Exportar ZIP</button>
+  <button id="deleteBtn">Eliminar elemento</button>
+</header>
+
+<div class="editor">
+
+  <aside class="sidebar">
+    <div class="component" draggable="true" data-type="section">Sección</div>
+    <div class="component" draggable="true" data-type="container">Contenedor</div>
+    <div class="component" draggable="true" data-type="h1">Título</div>
+    <div class="component" draggable="true" data-type="p">Párrafo</div>
+    <div class="component" draggable="true" data-type="button">Botón</div>
+    <div class="component" draggable="true" data-type="image">Imagen</div>
+    <div class="component" draggable="true" data-type="video">Video</div>
+    <div class="component" draggable="true" data-type="file">Archivo</div>
+  </aside>
+
+  <main id="canvas"></main>
+
+  <aside class="properties">
+    <h3>Propiedades</h3>
+
+    <label>Texto</label>
+    <input type="text" id="propText">
+
+    <div id="buttonOptions" style="display:none">
+      <label>Color fondo</label>
+      <input type="color" id="btnBgColor">
+
+      <label>Color texto</label>
+      <input type="color" id="btnTextColor">
+
+      <label>Enlace (URL)</label>
+      <input type="text" id="btnLink">
+
+      <label>
+        <input type="checkbox" id="btnNewTab">
+        Abrir en nueva pestaña
+      </label>
+
+      <label>Tipo</label>
+      <select id="btnType">
+        <option value="button">Normal</option>
+        <option value="submit">Submit</option>
+      </select>
+
+      <label>Acción alerta</label>
+      <input type="text" id="btnAlert">
+    </div>
+
+    <label>Subir archivo</label>
+    <input type="file" id="fileInput">
+
+  </aside>
+
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/dragdrop.js"></script>
+<script src="js/properties.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/jszip.min.js"></script>
+<script src="js/exporter.js"></script>
+
+</body>
+</html>
